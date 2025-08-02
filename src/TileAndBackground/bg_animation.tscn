@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c23tf1kd130ve"]
+
+[ext_resource type="Script" uid="uid://dd6ur0uu3ybex" path="res://src/TileAndBackground/bg_animation.gd" id="1_0f2ui"]
+[ext_resource type="Texture2D" uid="uid://0o6hcvkgym3k" path="res://assets/Sprites/Backgrounds/mountains_a.png" id="2_vta3o"]
+
+[node name="BgAnimation" type="Node2D"]
+script = ExtResource("1_0f2ui")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(4.54747e-13, 2.27374e-13)
+scale = Vector2(1.5, 1.6875)
+texture = ExtResource("2_vta3o")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(384, 2.27374e-13)
+scale = Vector2(1.5, 1.6875)
+texture = ExtResource("2_vta3o")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvwq6sdfu75wx"]
+
+[ext_resource type="PackedScene" uid="uid://c23tf1kd130ve" path="res://src/TileAndBackground/bg_animation.tscn" id="1_sag4g"]
+[ext_resource type="PackedScene" uid="uid://bqgiljccwnkem" path="res://src/TileAndBackground/tile_animation.tscn" id="2_k6qo2"]
+
+[node name="Game" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="BgAnimation" parent="World" instance=ExtResource("1_sag4g")]
+
+[node name="TileAnimation" parent="World" instance=ExtResource("2_k6qo2")]
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
