@@ -11,4 +11,18 @@ config_version=5
 [application]
 
 config/name="Dragon"
+run/main_scene="uid://cvwq6sdfu75wx"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=384
+window/size/viewport_height=216
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.632862, 0.854683, 0.947687, 1)
