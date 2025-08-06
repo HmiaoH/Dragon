@@ -6,7 +6,7 @@ extends Node2D
 @onready var background_1: Sprite2D = $Background
 @onready var background_2: Sprite2D = $Background2
 
-const MAX_SPEED: int = -60
+const MAX_SPEED: int = -110
 
 var background_size: int
 
