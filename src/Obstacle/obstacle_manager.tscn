@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://nskay4ns0xgx"]
+
+[ext_resource type="Script" uid="uid://d4hjoxptkw3tv" path="res://src/Obstacle/obstacle_manager.gd" id="1_71nrw"]
+[ext_resource type="PackedScene" uid="uid://xox3qe1gi22b" path="res://src/Obstacle/cactus.tscn" id="2_y7nkr"]
+[ext_resource type="PackedScene" uid="uid://4anjfac020w1" path="res://src/Obstacle/bird.tscn" id="3_x661g"]
+
+[node name="ObstacleManager" type="Node2D"]
+script = ExtResource("1_71nrw")
+cactus_scene = ExtResource("2_y7nkr")
+bird_scene = ExtResource("3_x661g")
+
+[node name="ObstacleContainer" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_generate_obstacle"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://xox3qe1gi22b"]
+
+[ext_resource type="Texture2D" uid="uid://bvexe04knvo26" path="res://assets/Sprites/Enemies/cactus.png" id="1_deafg"]
+[ext_resource type="Script" uid="uid://c1jcnusn7erlv" path="res://src/Obstacle/cactus.gd" id="1_m23xe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m23xe"]
+atlas = ExtResource("1_deafg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76dkf"]
+atlas = ExtResource("1_deafg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu8r4"]
+atlas = ExtResource("1_deafg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr5cr"]
+atlas = ExtResource("1_deafg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnqv0"]
+atlas = ExtResource("1_deafg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sjk4"]
+atlas = ExtResource("1_deafg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rqhdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m23xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76dkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu8r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr5cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnqv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sjk4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b5k8"]
+size = Vector2(15, 22)
+
+[node name="Cactus" type="Area2D"]
+script = ExtResource("1_m23xe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rqhdi")
+autoplay = "default"
+frame = 5
+frame_progress = 0.942785
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_5b5k8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="change_speed"]
