@@ -1,4 +1,4 @@
-# BgAnimation(Node2D)
+# Bg!nimation(Node2D)
 管理背景图片的滚动
 ### 属性
 - `animation_speed: int` 用于设定背景移动的速度，默认为-10

@@ -3,16 +3,22 @@ extends Node2D
 
 @onready var cactus_scene = preload("res://src/Obstacle/cactus.tscn")
 @onready var bird_scene = preload("res://src/Obstacle/bird.tscn")
-
+@onready var timer: Timer = $Timer
 # 2. 障碍物容器（方便管理生成的障碍物）
 @onready var obstacle_container: Node2D = $ObstacleContainer
 
-var obstacle_move_speed: int = 0
-const init_position_x := 204
+var obstacle_move_speed: int = 0:
+	set(value):
+		obstacle_move_speed = value
+		timer.wait_time -= 0.07
+
+const init_position_x := 408 
 const init_position_y := 32
+
 # 3. 障碍物数组（对应思维导图里的“障碍物(数组)”）
 var obstacles_scenes: Array[PackedScene] = []
 var obstacles: Array = []
+
 func _ready():
 	# 初始化：把预制体存入数组（方便 pick_random 随机选）
 	obstacles_scenes.append(cactus_scene)

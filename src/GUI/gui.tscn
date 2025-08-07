@@ -1,0 +1,163 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8p2o1j7sru5b"]
+
+[ext_resource type="Script" uid="uid://12ih7nbgykyn" path="res://src/GUI/gui.gd" id="1_yqssy"]
+[ext_resource type="StyleBox" uid="uid://dgtyh53q5c70e" path="res://assets/UIStyle/ButtonStyleHover.tres" id="2_03npx"]
+[ext_resource type="StyleBox" uid="uid://b11bwxcrh5wr5" path="res://assets/UIStyle/ButtonStyleNormal.tres" id="2_ejxde"]
+[ext_resource type="FontFile" uid="uid://cg4k5ifkg2nkv" path="res://assets/Font/寒蝉点阵体.ttf" id="2_msdgo"]
+[ext_resource type="StyleBox" uid="uid://bnkshyc2ybegp" path="res://assets/UIStyle/ButtonStylePressed.tres" id="3_vnnp5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m6cs"]
+bg_color = Color(0.972549, 0.980392, 0.976471, 1)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0.445149, 0.563025, 0.408862, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnnp5"]
+
+[node name="GUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yqssy")
+
+[node name="HealthPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -169.0
+offset_top = -96.0
+offset_right = -113.0
+offset_bottom = -80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7m6cs")
+
+[node name="HealthGridContainer" type="GridContainer" parent="HealthPanel"]
+layout_mode = 2
+columns = 10
+
+[node name="ScoreBoard" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 100.0
+offset_top = -96.0
+offset_right = 169.0
+offset_bottom = -73.0
+theme_override_colors/font_outline_color = Color(0.38294, 0.631241, 0.482478, 1)
+theme_override_constants/outline_size = 10
+text = "SCORE: 0"
+
+[node name="StartMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartGameButton" type="Button" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -2.0
+offset_right = 23.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.406449, 0.233514, 0.167435, 1)
+theme_override_colors/font_color = Color(0.296693, 0.163453, 0.115606, 1)
+theme_override_colors/font_focus_color = Color(0.298039, 0.164706, 0.113725, 1)
+theme_override_colors/font_pressed_color = Color(0.208846, 0.108824, 0.0705671, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vnnp5")
+theme_override_styles/hover = ExtResource("2_03npx")
+theme_override_styles/pressed = ExtResource("3_vnnp5")
+theme_override_styles/normal = ExtResource("2_ejxde")
+text = "开始游戏"
+
+[node name="DinoNeverDieLabel" type="Label" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -56.0
+offset_right = 98.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.469228, 0.700285, 0.579151, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("2_msdgo")
+theme_override_font_sizes/font_size = 36
+text = "Dino Never Die"
+
+[node name="RestartMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartGameButton" type="Button" parent="RestartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = 18.0
+offset_right = 43.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.406449, 0.233514, 0.167435, 1)
+theme_override_colors/font_color = Color(0.296693, 0.163453, 0.115606, 1)
+theme_override_colors/font_focus_color = Color(0.298039, 0.164706, 0.113725, 1)
+theme_override_colors/font_pressed_color = Color(0.208846, 0.108824, 0.0705671, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vnnp5")
+theme_override_styles/hover = ExtResource("2_03npx")
+theme_override_styles/pressed = ExtResource("3_vnnp5")
+theme_override_styles/normal = ExtResource("2_ejxde")
+text = "重新开始"
+
+[node name="GameOverLabel" type="Label" parent="RestartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -36.0
+offset_right = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.469228, 0.700285, 0.579151, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("2_msdgo")
+theme_override_font_sizes/font_size = 36
+text = "Game Over"
+
+[connection signal="pressed" from="StartMenu/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="RestartMenu/RestartGameButton" to="." method="_on_restart_game_button_pressed"]

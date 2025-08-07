@@ -23,6 +23,6 @@ func _on_change_state_timeout() -> void:
 
 	score_incremental += 0.5
 
-
-func _on_add_score_timer_timeout() -> void:
+func _on_score_changed_timer_timeout() -> void:
 	score += score_incremental
+

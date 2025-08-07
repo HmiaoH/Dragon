@@ -1,7 +1,10 @@
 class_name Player
 extends CharacterBody2D
 
-var health: int
+var health: int:
+	set(value):
+		health = value
+		on_health_changed.emit(value)
 
 const MAX_HEALTH = 3
 const SPEED = 300.0
@@ -9,6 +12,9 @@ const JUMP_VELOCITY = -300.0
 const GRAVITY = 980
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+signal on_health_changed(value: int)
+signal on_game_over()
 
 func _ready() -> void:
 	health = MAX_HEALTH
@@ -31,6 +37,4 @@ func set_health(value: int):
 	health += value
 	animated_sprite.play("hurt")
 	if health == 0:
-		get_tree().paused = true
-		await get_tree().create_timer(1).timeout
-		get_tree().reload_current_scene()
+		on_game_over.emit()
