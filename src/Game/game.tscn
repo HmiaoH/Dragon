@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvwq6sdfu75wx"]
+[gd_scene load_steps=6 format=3 uid="uid://cvwq6sdfu75wx"]
 
 [ext_resource type="Script" uid="uid://n5y541a8ol2v" path="res://src/Game/game_manager.gd" id="1_bob6j"]
 [ext_resource type="PackedScene" uid="uid://c23tf1kd130ve" path="res://src/TileAndBackground/bg_animation.tscn" id="1_sag4g"]
 [ext_resource type="Script" uid="uid://c4y2w728npvcr" path="res://src/World/world.gd" id="2_bob6j"]
 [ext_resource type="PackedScene" uid="uid://bqgiljccwnkem" path="res://src/TileAndBackground/tile_animation.tscn" id="2_k6qo2"]
+[ext_resource type="PackedScene" uid="uid://ejo3pcfws3mg" path="res://src/Player/Player.tscn" id="5_3s8ir"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_bob6j")
@@ -15,6 +16,10 @@ script = ExtResource("2_bob6j")
 
 [node name="TileAnimation" parent="World" instance=ExtResource("2_k6qo2")]
 position = Vector2(-192, 0)
+
+[node name="Player" parent="World" instance=ExtResource("5_3s8ir")]
+position = Vector2(-137, 32)
+scale = Vector2(1.5, 1.5)
 
 [node name="Camera2D" type="Camera2D" parent="World"]
 
