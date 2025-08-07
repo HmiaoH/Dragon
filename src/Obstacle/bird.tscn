@@ -56,9 +56,3 @@ frame_progress = 0.450479
 position = Vector2(1, 0)
 rotation = 1.576
 shape = SubResource("CapsuleShape2D_5nkpl")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.6
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="change_speed"]

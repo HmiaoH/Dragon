@@ -6,7 +6,7 @@ extends Node2D
 
 @onready var tile_map_layer_1: TileMapLayer = $TileMapLayer
 @onready var tile_map_layer_2: TileMapLayer = $TileMapLayer2
-
+@onready var obstacle_manager: ObstacleManager = $ObstacleManager
 const MAX_SPEED: int = -200
 
 var tile_map_layer_size: int
@@ -27,4 +27,5 @@ func _physics_process(delta: float) -> void:
 
 func change_speed(change_value: int) -> void:
 	animation_speed = clampi(animation_speed - change_value, MAX_SPEED, animation_speed)
+	obstacle_manager.obstacle_move_speed = animation_speed
 	print(animation_speed)
